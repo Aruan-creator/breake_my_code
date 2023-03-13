@@ -9,7 +9,7 @@ def discrim(a, b, c):
 def two_roots(a, b, D):
     x1 = (-b + sqrt(D)) / (2 * a)
     x2 = (-b - sqrt(D)) / (2 * a)
-    return [ x1, x2 ]
+    return [x1, x2]
 
 def one_root(b, a):
     result = -b / 2*a
@@ -17,16 +17,20 @@ def one_root(b, a):
 
 def get_roots(a, b, c):
     print(a, b, c)
-    if(discrim(a, b, c) > 0):
-        return two_roots(a, b, c)
-    elif(discrim(a, b, c)== 0):
+    D = discrim(a, b, c)
+    if(D > 0):
+        return two_roots(a, b, D)
+    elif(D == 0):
         return one_root(a, b)
-    elif(discrim(a, b, c) < 0):
+    elif(D < 0):
         return False
 
 def prepareArg(arg):
-    #add some new predicates
-    return int(arg)
+    while True:
+        if arg.isnumeric():
+            return int(arg)
+        else:
+            continue
 
 def main():
     #2, 4, 12 = False
