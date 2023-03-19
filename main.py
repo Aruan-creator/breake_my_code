@@ -1,5 +1,9 @@
-def sqrt(D):
-    return D ** 0.5
+import math
+
+sqrt = math.sqrt
+
+# def sqrt(D):
+#     return D ** 0.5
 
 def discrim(a, b, c):
     D = (b**2) - (4 * a * c)
@@ -26,11 +30,8 @@ def get_roots(a, b, c):
         return False
 
 def prepareArg(arg):
-    while True:
-        if arg.isnumeric():
-            return int(arg)
-        else:
-            continue
+    return float(arg)
+
 
 def main():
     #2, 4, 12 = False
