@@ -30,6 +30,8 @@ def get_roots(a, b, c):
         return False
 
 def prepareArg(arg):
+    if arg == 0:
+        return False
     return float(arg)
 
 
